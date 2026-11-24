@@ -13,11 +13,14 @@ public class Unit {
 
     public void attack(Unit attacker, Unit receiver) {
         receiver.healthPoint -= attacker.attackStrength;
-        if (receiver.healthPoint <= 0) {
-            System.out.println(receiver.name + " died!");
-        } else {
-            System.out.println(receiver.name + " has " + receiver.healthPoint + " HP left!");
-        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAttackStrength() {
+        return attackStrength;
     }
 
     public int getHealthPoint() {

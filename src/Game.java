@@ -27,9 +27,16 @@ public class Game {
     }
 
     public void startGame() {
+        int roundCount = 1; //starts at 1
         while (friendlyUnit.getHealthPoint() > 0 && enemyUnit.getHealthPoint() > 0) {
             friendlyUnit.attack(friendlyUnit, enemyUnit);
             enemyUnit.attack(enemyUnit, friendlyUnit);
+            ui.displayMessage("Round " + roundCount + ": "
+                    + "\n" + friendlyUnit.getName() + " dealt " + friendlyUnit.getAttackStrength() + " to " + enemyUnit.getName() + " (" + enemyUnit.getName() + " has " + enemyUnit.getHealthPoint() + " HP left!)"
+                    + "\n" + enemyUnit.getName() + " dealt " + enemyUnit.getAttackStrength() + " to " + friendlyUnit.getName() + " (" + friendlyUnit.getName() + " has " + friendlyUnit.getHealthPoint() + " HP left!)"
+                    + "\n"
+            );
+            roundCount++;
         }
     }
 
